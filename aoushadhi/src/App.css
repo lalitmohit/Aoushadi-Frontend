@@ -1,0 +1,12 @@
+.App{
+    display: flex;
+    background-color: #C2D1D6;
+
+}
+.sideb{
+    width: 25%;
+}
+.content{
+    width: 75%;
+}
+
