@@ -1,0 +1,38 @@
+.Box-SearchBar {
+    display: flex;
+    padding-left: 10%;
+}
+
+.SearchBar {
+    display: flex;
+    background-color: #eeeeee;
+    justify-content: space-between;
+    align-items: center;
+    color: #646060;
+    width: 70%;
+    cursor: pointer;
+    border-radius: 14px;
+}
+
+.SearchBar input {
+    color: #646060;
+    padding: 15px;
+    padding-left: 30px;
+    width: 80%;
+    background-color: transparent;
+    border: none; /* Add this line to remove input border */
+}
+
+.SearchBar input:focus {
+    outline: none;
+}
+
+.Search-Icon {
+    padding: 5px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 20px;
+    height: 90%;
+}

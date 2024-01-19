@@ -9,12 +9,11 @@
   border-right: 3px solid #2da95c;
 }
 
-/* Logo in Sidebar */
+/* Common styles for Logo and Image in Sidebar */
 .Logo-SideBar {
   padding-left: 20%;
 }
 
-/* Image in Sidebar */
 .Image-SideBar {
   width: 120px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -57,29 +56,30 @@
 
 .Items-SideBar a {
   text-decoration: none;
-  color: white;
   font-size: 16px;
   font-weight: 500;
   padding: 7px;
   cursor: pointer;
+  color: white;
 }
 
 .Items-SideBar a:hover {
   color: #9dabaf;
+  font-weight: 700;
 }
 
-/* User Section in Sidebar */
-.User-SideBar {
+.User-SideBar{
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
   padding: 7px;
-  color: red;
   cursor: pointer;
+  color: red;
 }
 
 .User-SideBar:hover {
   color: green;
+  font-weight: 700;
 }
 
 /* Sidebar Footer */

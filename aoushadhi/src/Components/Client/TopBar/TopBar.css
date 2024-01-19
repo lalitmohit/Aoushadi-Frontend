@@ -1,0 +1,26 @@
+.TopBar{
+    display: flex;
+    justify-content: flex-end;
+    font-family: "Poppins";
+    cursor: pointer;
+}
+
+.Image-TopBar{
+    margin: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.Image-TopBar img{
+    width: 40px;
+}
+
+.Image-TopBar p{
+    color: #2DA95C;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 4px;
+}
