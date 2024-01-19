@@ -4,6 +4,7 @@ import Login from "./Components/Client/Login/Login";
 import TopBar from "./Components/Client/TopBar/TopBar";
 import SearchBar from "./Components/Client/SearchBar/SearchBar";
 import "./App.css";
+import Contact from "./Components/Client/Contact/Contact";
 
 function App() {
   const [logined, setLogined] = useState(true);
@@ -17,7 +18,7 @@ function App() {
           <div className="content ">
             <TopBar username={`${logined?"Kunal Singla":"Sign In"}`}/>
             <SearchBar/>
-            {/* <h2>Main Content</h2> */}
+            < Contact/>
           </div>
         </>
       ) : (
