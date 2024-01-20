@@ -3,7 +3,18 @@ import Logo from "../../../Assets/Logo.svg";
 import "./Login.css";
 
 const Login = () => {
-  const [signIn, setSignin] = useState(true);
+  const [formState, setFormState] = useState("signIn");
+  const [userId, setUserId] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    // You can access form values using userId, email, mobileNumber, and password states
+  };
+
 
   return (
     <div className="Container-Login">
@@ -16,30 +27,55 @@ const Login = () => {
         </div>
       </div>
       <div className="Form-Login">
-        <div className="Input-Login">
-          {!signIn ? (
-            <input type="text" placeholder="User ID/ Mobile Number/ Email" />
-          ) : (
+      <form className="Input-Login" onSubmit={handleSubmit}>
+          {formState !== "signIn" && (
+            <input
+              type="text"
+              placeholder="User ID/ Mobile Number/ Email"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+            />
+          )}
+          {formState === "signIn" && (
             <>
-              <input type="number" placeholder="User ID" />
-              <input type="email" placeholder="Email" />
-              <input type="number" placeholder="Mobile Number" />
+              <input
+                type="number"
+                placeholder="User ID"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="number"
+                placeholder="Mobile Number"
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+              />
             </>
           )}
-          <input type="password" placeholder="Password" />
-        </div>
-        <div className="Button-Login">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <button type="submit" className="Dark">
             Submit
           </button>
-        </div>
+        </form>
+        
         <div className="Para-Login">
-          <p onClick={() => setSignin(!signIn)}>
-            {!signIn ? "Create New Account ?" : "Already have an account?"}
+          <p onClick={() => setFormState(formState === "signIn" ? "signUp" : "signIn")}>
+            {formState === "signIn" ? "Create New Account?" : "Already have an account?"}
           </p>
-          <p>
-            {!signIn ? "Forgot Password ?" : ""}
-          </p>
+          {formState === "signIn" && (
+            <p>Forgot Password?</p>
+          )}
         </div>
         <hr />
         <div className="Authentication-Login">

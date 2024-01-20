@@ -108,7 +108,7 @@
   width: 100%;
 }
 
-.Button-Login button {
+.Input-Login button {
   color: white;
   font-weight: 600;
   margin: 10px;
@@ -121,7 +121,7 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.Button-Login button:hover {
+.Input-Login button:hover {
   transform: scale(1.1);
   background-color: var(--accent-color);
   color: var(--main-bg-color);
