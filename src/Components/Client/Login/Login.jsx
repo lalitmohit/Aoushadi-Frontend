@@ -28,7 +28,7 @@ const Login = () => {
       </div>
       <div className="Form-Login">
       <form className="Input-Login" onSubmit={handleSubmit}>
-          {formState !== "signIn" && (
+          {formState === "signIn" && (
             <input
               type="text"
               placeholder="User ID/ Mobile Number/ Email"
@@ -36,7 +36,7 @@ const Login = () => {
               onChange={(e) => setUserId(e.target.value)}
             />
           )}
-          {formState === "signIn" && (
+          {formState !== "signIn" && (
             <>
               <input
                 type="number"
