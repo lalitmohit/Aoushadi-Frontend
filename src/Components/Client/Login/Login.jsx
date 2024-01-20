@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../../Assets/Logo.svg";
 import "./Login.css";
 
 const Login = () => {
-  const [login, setLogin] = useState("Sign In");
-
-  const inputFields = (
-    <>
-      <input type="text" placeholder="Username" />
-      <input type="number" placeholder="ID Number" />
-      <input type="password" placeholder="Password" />
-      {login === "Sign Up" && <input type="email" placeholder="Email" />}
-    </>
-  );
+  const [signIn, setSignin] = useState(true);
 
   return (
     <div className="Container-Login">
@@ -26,24 +17,23 @@ const Login = () => {
       </div>
       <div className="Form-Login">
         <div className="Input-Login">
-          {inputFields}
-          <p>Forgot Password ?</p>
+          {!signIn ? (
+            <input type="text" placeholder="User ID/ Mobile Number/ Email" />
+          ) : (
+            <>
+              <input type="number" placeholder="User ID" />
+              <input type="email" placeholder="Email" />
+              <input type="number" placeholder="Mobile Number" />
+            </>
+          )}
+          <input type="password" placeholder="Password" />
+          <p onClick={() => setSignin(!signIn)}>
+            {!signIn ? "Create New Account ?" : "Already have an account?"}
+          </p>
         </div>
-
         <div className="Button-Login">
-          <button
-            type="submit"
-            className={`${login === "Sign In" ? "Dark" : "Light"}`}
-            onClick={() => setLogin("Sign In")}
-          >
-            Sign In
-          </button>
-          <button
-            type="submit"
-            className={`${login === "Sign In" ? "Light" : "Dark"}`}
-            onClick={() => setLogin("Sign Up")}
-          >
-            Sign Up
+          <button type="submit" className="Dark">
+            Submit
           </button>
         </div>
         <hr />

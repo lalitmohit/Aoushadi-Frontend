@@ -1,32 +1,45 @@
-import SideBar from "./Components/Common/SideBar/SideBar";
-import { useState } from "react";
-import Login from "./Components/Client/Login/Login";
-import TopBar from "./Components/Client/TopBar/TopBar";
-import SearchBar from "./Components/Client/SearchBar/SearchBar";
+import React, { useState, useEffect } from "react";
+import { Route, Routes, Link, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
-import Contact from "./Components/Client/Contact/Contact";
-import User from "./Components/Client/User/User";
+import { Login, TopBar, SearchBar, User, Contact, Home, SideBar } from "./Import.jsx";
 
 function App() {
   const [logined, setLogined] = useState(true);
+
+  useEffect(() => {
+    // You can perform side effects or data fetching here
+    // For example, check if the user is logged in and update the state accordingly
+  }, []);
+
   return (
-    <div className="App flex">
-      {logined ? (
-        <>
-          <div className="sideb">
-            <SideBar />
-          </div>
-          <div className="content ">
-            {/* <TopBar username={`${logined?"Kunal Singla":"Sign In"}`}/> */}
-            {/* <SearchBar/> */}
-            <User/>
-            {/* < Contact/> */}
-          </div>
-        </>
-      ) : (
-        <Login />
-      )}
-    </div>
+    <Router>
+      <div className="App flex">
+        {logined ? (
+          <>
+            <div className="sideb">
+              <SideBar />
+            </div>
+            <div className="content ">
+              <TopBar username={`${logined ? "Kunal Singla" : "Sign In"}`} />
+              <SearchBar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="user" element={<User />} />
+                <Route path="contact" element={<Contact />} />
+                {/* Add a default route for unmatched paths */}
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </div>
+          </>
+        ) : (
+          <Routes>
+            <Route path="login" element={<Login />} />
+            {/* Add a default route for unmatched paths */}
+            <Route path="*" element={<Login />} />
+          </Routes>
+        )}
+      </div>
+    </Router>
   );
 }
 

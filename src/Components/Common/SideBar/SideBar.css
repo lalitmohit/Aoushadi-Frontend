@@ -54,7 +54,7 @@
   gap: 10px;
 }
 
-.Items-SideBar a {
+.Items-SideBars {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -62,8 +62,10 @@
   cursor: pointer;
   color: white;
 }
-
-.Items-SideBar a:hover {
+.Items-Active{
+  color: #9dabaf;
+}
+.Items-SideBars:hover {
   color: #9dabaf;
   font-weight: 700;
 }

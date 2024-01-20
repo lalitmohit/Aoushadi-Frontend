@@ -7,11 +7,12 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const ContactInfo = ({ icon, text }) => (
   <div className="Individual-Contact">
     {icon}
-    <a href="#">{text}</a>
+    <Link to="#">{text}</Link>
   </div>
 );
 
