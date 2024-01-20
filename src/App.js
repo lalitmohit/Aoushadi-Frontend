@@ -4,7 +4,7 @@ import "./App.css";
 import { Login, TopBar, SearchBar, User, Contact, Home, SideBar } from "./Import.jsx";
 
 function App() {
-  const [logined, setLogined] = useState(true);
+  const [logined, setLogined] = useState(false);
 
   useEffect(() => {
     // You can perform side effects or data fetching here
