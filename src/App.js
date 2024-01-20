@@ -34,6 +34,8 @@ function App() {
         ) : (
           <Routes>
             <Route path="login" element={<Login />} />
+            <Route path="home" element={<User />} />
+
             {/* Add a default route for unmatched paths */}
             <Route path="*" element={<Login />} />
           </Routes>
