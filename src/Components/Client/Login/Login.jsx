@@ -37,7 +37,7 @@ const Login = () => {
           <p onClick={() => setSignin(!signIn)}>
             {!signIn ? "Create New Account ?" : "Already have an account?"}
           </p>
-          <p onClick={() => setSignin(!signIn)}>
+          <p>
             {!signIn ? "Forgot Password ?" : ""}
           </p>
         </div>
