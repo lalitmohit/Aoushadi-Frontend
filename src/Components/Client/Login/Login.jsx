@@ -27,14 +27,19 @@ const Login = () => {
             </>
           )}
           <input type="password" placeholder="Password" />
-          <p onClick={() => setSignin(!signIn)}>
-            {!signIn ? "Create New Account ?" : "Already have an account?"}
-          </p>
         </div>
         <div className="Button-Login">
           <button type="submit" className="Dark">
             Submit
           </button>
+        </div>
+        <div className="Para-Login">
+          <p onClick={() => setSignin(!signIn)}>
+            {!signIn ? "Create New Account ?" : "Already have an account?"}
+          </p>
+          <p onClick={() => setSignin(!signIn)}>
+            {!signIn ? "Forgot Password ?" : ""}
+          </p>
         </div>
         <hr />
         <div className="Authentication-Login">
