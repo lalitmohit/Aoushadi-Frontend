@@ -4,8 +4,8 @@ import sample_image from "../../../Assets/7be83f4d7db859884c987f0de107f497.png";
 import option_image1 from "../../../Assets/4e0103a2727c0a67da4ce99ca4fc8fdb.png";
 export default function ProductPage() {
   return (
-    <div className="mt-10 mr-12 mb-10">
-      <div className="flex-col bg-white min-h-96 rounded-2xl p-10 ">
+    <div className="mt-10 md:mr-12 mb-10 mr-0">
+      <div className="flex-col bg-white min-h-96 rounded-2xl p-10">
         <div className="flex">
           <div className="grid w-80">
             <div className="h-72 w-72 place-self-start border-2 border-gray">
