@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, Link, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
-import { Login, TopBar, SearchBar, User, Contact, Home, SideBar } from "./Import.jsx";
+import {
+  Login,
+  TopBar,
+  SearchBar,
+  User,
+  Contact,
+  Home,
+  SideBar,
+  ProductPage,
+} from "./Import.jsx";
 
 function App() {
-  const [logined, setLogined] = useState(false);
+  const [logined, setLogined] = useState(true);
 
   useEffect(() => {
     // You can perform side effects or data fetching here
@@ -26,6 +35,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="user" element={<User />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="productpage" element={<ProductPage />} />
                 {/* Add a default route for unmatched paths */}
                 <Route path="*" element={<Home />} />
               </Routes>

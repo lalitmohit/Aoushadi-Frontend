@@ -5,5 +5,6 @@ import User from "./Components/Client/User/User";
 import Contact from "./Components/Client/Contact/Contact";
 import SideBar from "./Components/Common/SideBar/SideBar";
 import Home from "./Components/Client/Home/Home";
+import ProductPage from "./Components/Client/ProductPage/ProductPage";
 
-export { Login, TopBar, SearchBar, User, Contact, Home, SideBar };
+export { Login, TopBar, SearchBar, User, Contact, Home, SideBar, ProductPage };
