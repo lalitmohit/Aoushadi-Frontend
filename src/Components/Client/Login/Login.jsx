@@ -4,6 +4,7 @@ import "./Login.css";
 import axios from 'axios';
 
 const Login = () => {
+
   const [signIn, setSignin] = useState(true);
   const [userid, setUserId] = useState("");
   const [custid, setCustId] = useState("");
@@ -42,6 +43,7 @@ const Login = () => {
     }
   }
 
+
   return (
     <div className="Container-Login">
       <div className="Logo-Login">
@@ -53,6 +55,7 @@ const Login = () => {
         </div>
       </div>
       <div className="Form-Login">
+
         <form onSubmit={userInput} method="Post">
           <div className="Input-Login">
             {!signIn ? (
@@ -78,7 +81,11 @@ const Login = () => {
           </p>
           <p>
             {!signIn ? "Forgot Password ?" : ""}
+
           </p>
+          {formState === "signIn" && (
+            <p>Forgot Password?</p>
+          )}
         </div>
         <hr />
         <div className="Authentication-Login">
