@@ -1,0 +1,53 @@
+:root {
+  --main-bg-color: #033b4a;
+  --accent-color: #2da95c;
+  --light-bg-color: #646060;
+  --button-hover-color: #10847e;
+  --text-color: #646060;
+  --border-color: white;
+}
+
+.body {
+  height: 110%;
+}
+.pay {
+  background-color: var(--button-hover-color);
+  display: flex;
+  justify-content: center;
+  vertical-align: auto;
+  color: white;
+  font-size: xx-large;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 25px 105px;
+  width: fit-content;
+}
+.pay_method {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  vertical-align: auto;
+  font-size: xx-large;
+  font-weight: 600;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 700px;
+  color: var(--main-bg-color);
+  border: 3px solid var(--main-bg-color);
+  cursor: pointer;
+}
+button {
+  background-color: var(--main-bg-color);
+  padding: 10px 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: larger;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.pay_method:hover {
+  background-color: var(--main-bg-color);
+  color: white;
+}

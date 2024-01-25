@@ -1,12 +1,9 @@
-.App{
-    display: flex;
-    background-color: #C2D1D6;
-
+.App {
+  display: flex;
 }
-.sideb{
-    width: 25%;
+.sideb {
+  width: 25%;
 }
-.content{
-    width: 75%;
+.content {
+  width: 75%;
 }
-
