@@ -1,0 +1,91 @@
+.OfferCard-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #026077;
+  margin: 10px;
+  border: 2px solid #2da95c;
+  border-radius: 20px;
+  color: white;
+  font-family: "Poppins";
+  width: 400px;
+}
+.Heading-Card {
+  padding: 10px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.Heading-Card hr {
+  border: 1px solid #2da95c;
+  margin-top: 10px;
+  width: 70%;
+}
+
+.Content-Conatiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px;
+}
+.Para-Card {
+  width: 60%;
+  padding: 5px;
+}
+.Image-Card {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Image-Card img {
+  width: 150px;
+  /* box-shadow: 0 0 00px rgba(0, 0, 0, 0.3); */
+  transition: transform 0.3s ease-in-out;
+}
+.Image-Card img:hover {
+    transform: scale(1.1);
+  }
+
+.Content-Conatiner hr {
+  border: 2px solid #2da95c;
+}
+
+.Code-Container {
+  width: 100%;
+}
+
+.Code-Container hr {
+  border: 1px solid #2da95c;
+}
+
+.Hr-Copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 10px;
+}
+
+.Code-Card {
+  font-weight: 600;
+  padding: 5px;
+}
+
+.Copy-Text {
+  background-color: #2da95c;
+  padding: 5px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.Copy-Text:hover {
+    transform: scale(1.1);
+  }
