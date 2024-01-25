@@ -63,7 +63,6 @@
   cursor: pointer;
   border-left: 2px solid white;
 }
-
 .Input-Login {
   display: flex;
   flex-direction: column;
@@ -81,6 +80,54 @@
   font-size: 16px;
   width: 90%;
 }
+@media screen and (max-width: 1280px) {
+  .Container-Login {
+    flex-wrap: wrap;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .Logo-Login {
+    width: 65%;
+  }
+  .Form-Login {
+    border-left: 0px solid transparent;
+    border-top: 2px solid white;
+    width: 70%;
+    height: 50%;
+  }
+}
+@media screen and (max-width: 945px) {
+  .Container-Login {
+    width: 70%;
+    margin-left: 15%;
+  }
+  .Form-Login {
+    border-left: 0px solid transparent;
+    border-top: 2px solid white;
+    width: 80%;
+    height: 50%;
+  }
+  .Authentication-Login{
+    width: 75%;
+  }
+}
+@media screen and (max-width: 761px) {
+  .Container-Login {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .Form-Login {
+    border-left: 0px solid transparent;
+    border-top: 2px solid white;
+    width: 90%;
+    height: 50%;
+  }
+  .Authentication-Login{
+    width: 75%;
+  }
+}
+
+
 
 .Para-Login {
   display: flex;
@@ -152,4 +199,45 @@
   color: var(--main-bg-color);
   font-weight: 600;
   font-size: 14px;
+}
+@media screen and (max-width: 570px) {
+  .Container-Login {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .Form-Login {
+    border-left: 0px solid transparent;
+    border-top: 2px solid white;
+    width: 95%;
+    height: 50%;
+  }
+  .Input-Login input{
+    padding-left: 10px;
+    width: 100%;
+    /* font-size: 15px; */
+  }
+  .Input-Login button{
+    width: 100%;
+  }
+  .Authentication-Login{
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  
+  .Input-Login input{
+    font-size: 15px;
+    /* padding-left: 0px; */
+    margin-left: 0px;
+  }
+  .Input-Login button{
+    margin-left: 0px
+  }
+  .Para-Login p {
+    font-size: 12px;
+  }
+  .Authentication-Login{
+    width: 75%;
+  }
 }
