@@ -9,6 +9,7 @@ import {
   Contact,
   Home,
   SideBar,
+  Offer,
   ProductPage,
   Payment_Gateway,
   Address,
@@ -18,8 +19,6 @@ function App() {
   const [logined, setLogined] = useState(true);
 
   useEffect(() => {
-    // You can perform side effects or data fetching here
-    // For example, check if the user is logged in and update the state accordingly
   }, []);
 
   return (
@@ -37,6 +36,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="user" element={<User />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="offers" element={<Offer />} />
                 <Route path="productpage" element={<ProductPage />} />
                 <Route path="payment" element={<Payment_Gateway />} />
                 <Route path="address" element={<Address />} />

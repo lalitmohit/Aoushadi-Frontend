@@ -40,7 +40,7 @@ const SideBar = () => {
           Cart
         </NavLink>
         <NavLink
-          to="/"
+          to="/offers"
           className={({ isActive }) =>
             ` ${isActive ? "Items-Active" : ""} Items-SideBars`
           }
