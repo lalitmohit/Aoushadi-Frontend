@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
-import "./CartCard.css"
+import "./CartCard.css";
 
 const CartCard = ({ img, price, name, desc, quant }) => {
   const [quantity, setQuantity] = useState(1);
+  const [isCart, setIsCart] = useState(false);
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -27,9 +28,11 @@ const CartCard = ({ img, price, name, desc, quant }) => {
           <div className="content-Card">
             <div className="top-Card">
               <h1>{name}</h1>
-              <button onClick={deleteCard}>
-                <MdDelete />
-              </button>
+              {isCart && (
+                <button onClick={deleteCard}>
+                  <MdDelete />
+                </button>
+              )}
             </div>
             <div className="Para-Card">
               <p className="by-Card">{desc}</p>
@@ -37,11 +40,21 @@ const CartCard = ({ img, price, name, desc, quant }) => {
             </div>
             <div className="bottom-Card">
               <h1>Rs. {price * quantity}</h1>
-              <div className="plmn-Card">
-                <button className="minus" onClick={decreaseQuantity}>-</button>
-                <button>Qty: {quantity}</button>
-                <button className="minus" onClick={increaseQuantity}>+</button>
-              </div>
+              {isCart ? (
+                <div className="plmn-Card">
+                  <button className="minus" onClick={decreaseQuantity}>
+                    -
+                  </button>
+                  <button>Qty: {quantity}</button>
+                  <button className="minus" onClick={increaseQuantity}>
+                    +
+                  </button>
+                </div>
+              ) : (
+                <div className="add-cart">
+                  <button>Add to Cart</button>
+                </div>
+              )}
             </div>
           </div>
         </div>

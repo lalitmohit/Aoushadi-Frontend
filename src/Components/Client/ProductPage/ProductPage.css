@@ -1,0 +1,63 @@
+:root {
+  --main-bg-color: #033b4a;
+  --accent-color: #2da95c;
+  --light-bg-color: #646060;
+  --button-hover-color: #10847e;
+  --text-color: #646060;
+  --border-color: white;
+}
+
+.medicine_name {
+  color: var(--main-bg-color);
+  font-size: 36px;
+  font-weight: 600;
+  width: 80%;
+}
+.top {
+  border-bottom: 2px solid var(--main-bg-color);
+}
+.money {
+  color: var(--main-bg-color);
+  padding-right: 10px;
+}
+.falsemoney {
+  color: #646060;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+.dash {
+  margin-left: 3px;
+  text-decoration: line-through;
+}
+.save {
+  color: var(--accent-color);
+  margin-left: 30px;
+}
+.Quantity {
+  color: #033b4a;
+  font-weight: 700;
+  margin-top: 20px;
+}
+button {
+  background-color: var(--main-bg-color);
+  padding: 10px 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: larger;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product_details {
+  height: 200px;
+  margin-top: 30px;
+  border-top: 2px solid var(--light-bg-color);
+  padding: 10px;
+}
+.heading {
+  color: #033b4a;
+  font-size: x-large;
+  font-weight: 600;
+}
