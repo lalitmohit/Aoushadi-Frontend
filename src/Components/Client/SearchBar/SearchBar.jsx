@@ -7,10 +7,11 @@ const SearchBar = () => {
   const location = useLocation();
 
   const isUserActive = location.pathname === "/user";
+  const isCartActive = location.pathname === "/cart";
 
   return (
     <>
-      {!isUserActive && (
+      {!(isUserActive || isCartActive) && (
         <div className="Box-SearchBar">
           <div className="SearchBar">
             <input type="text" placeholder="Search Your Medicine" />

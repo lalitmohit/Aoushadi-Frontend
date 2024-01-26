@@ -1,0 +1,106 @@
+.Payment-Box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid #033b4a;
+  border-radius: 10px;
+  width: 90%;
+  margin-top: 10px;
+  flex-direction: column;
+  font-family: "Poppins";
+  padding: 10px;
+}
+
+.Total-Cart {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.Total-Cart h1 {
+  font-size: 18px;
+  width: 100%;
+  border-bottom: 2px solid #033b4a;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: #033b4a;
+  padding-bottom: 10px;
+  margin: 5px;
+}
+
+.Total-Cart button {
+  background-color: #10847e;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
+
+.detail-box {
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  flex-direction: column;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.detail-box h1 {
+  color: #10847e;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 10px;
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.amount-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: #033b4a;
+  font-weight: 600;
+}
+
+.amount-box p {
+  display: flex;
+  width: 30%;
+  color: black;
+  font-weight: 800;
+}
+.detail-box hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #033b4a;
+}
+
+.amount-box-2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: #2da95c;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.amount-box-2 p {
+  display: flex;
+  width: 30%;
+  /* color: black; */
+  font-weight: 1200;
+}
+.adress-box{
+    margin-top: 20px;
+
+}
+
+.adress-box button {
+    background-color: #10847e;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+  }

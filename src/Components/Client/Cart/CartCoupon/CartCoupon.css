@@ -1,0 +1,63 @@
+.Coupon-Card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid #033b4a;
+  border-radius: 10px;
+  width: 90%;
+  margin: 10px;
+  padding: 5px;
+}
+
+.Coupon-Card h1 {
+  font-size: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #033b4a;
+  color: #033b4a;
+  padding-top: 2px;
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.Apply-Card {
+  width: 60%;
+  background-color: #d9d9d9;
+  border: 2px solid #033b4a;
+  border-radius: 10px;
+  padding-top: 2px;
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Apply-Card input {
+  color: #033b4a;
+  border: none;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  outline: none;
+  width: 50%;
+  padding-left: 10px;
+  font-weight: 600;
+  border-bottom: 2px solid #033b4a;
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+.Apply-Card button {
+  background-color: #2da95c;
+  border: 2px solid #10847e;
+  border-radius: 15px;
+  color: white;
+  padding: 5px 15px;
+  font-weight: 600;
+  margin-right: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Apply-Card button:hover {
+  transform: scale(1.1);
+}

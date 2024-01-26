@@ -9,6 +9,7 @@ const TopBar = ({ username }) => {
   const location = useLocation();
 
   const isUserActive = location.pathname === "/user";
+  
   return (
     <>
       {!isUserActive && (

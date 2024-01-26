@@ -10,6 +10,7 @@ import {
   Home,
   SideBar,
   Offer,
+  Cart,
   ProductPage,
   Payment_Gateway,
   Address,
@@ -37,6 +38,7 @@ function App() {
                 <Route path="user" element={<User />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="offers" element={<Offer />} />
+                <Route path="cart" element={<Cart />} />
                 <Route path="productpage" element={<ProductPage />} />
                 <Route path="payment" element={<Payment_Gateway />} />
                 <Route path="address" element={<Address />} />
