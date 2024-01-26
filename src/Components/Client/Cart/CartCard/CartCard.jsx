@@ -26,12 +26,12 @@ const CartCard = ({ img, price, name, desc, quant }) => {
             <img src={img} alt="Product" />
           </div>
           <div className="content-Card">
-            <div className="top-Card">
+            <div className="top-ka-Card">
               <h1>{name}</h1>
               {isCart && (
-                <button onClick={deleteCard}>
+                <div  className="button" onClick={deleteCard}>
                   <MdDelete />
-                </button>
+                </div>
               )}
             </div>
             <div className="Para-Card">
@@ -40,21 +40,25 @@ const CartCard = ({ img, price, name, desc, quant }) => {
             </div>
             <div className="bottom-Card">
               <h1>Rs. {price * quantity}</h1>
-              {isCart ? (
-                <div className="plmn-Card">
-                  <button className="minus" onClick={decreaseQuantity}>
-                    -
-                  </button>
-                  <button>Qty: {quantity}</button>
-                  <button className="minus" onClick={increaseQuantity}>
-                    +
-                  </button>
-                </div>
-              ) : (
-                <div className="add-cart">
-                  <button>Add to Cart</button>
-                </div>
-              )}
+              {
+                isCart ? (
+                  <div className="plmn-Card">
+                    <div className="minus" onClick={decreaseQuantity}>
+                      -
+                    </div>
+                    <div>Qty: {quantity}</div>
+                    <div className="minus" onClick={increaseQuantity}>
+                      +
+                    </div>
+                  </div>
+                ) : (
+                  (
+                    <div className="add-cart">
+                      <div>Add to Cart</div>
+                    </div>
+                  )
+                )
+              }
             </div>
           </div>
         </div>

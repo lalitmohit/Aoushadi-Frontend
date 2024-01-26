@@ -1,11 +1,13 @@
 import React from "react";
 import "./CartPayment.css";
+import { NavLink } from "react-router-dom";
 
 const CartPayment = () => {
+  
   return (
     <div className="Payment-Box">
       <div className="Total-Cart">
-        <h1>Cart Total: 1500</h1>
+        <h1>{`Cart Total: 1500`}</h1>
       </div>
       <div className="detail-box">
         <h1>Bill Summary</h1>
@@ -28,9 +30,12 @@ const CartPayment = () => {
         </div>
         <hr />
       </div>
-      <div className="adress-box">
-        <button>Add Delivery Address</button>
-      </div>
+      {(<div className="adress-box">
+        <NavLink to="/address">
+          {/* <div>Add Delivery Address</div> */}
+          Add Deliver Address
+        </NavLink>
+      </div>)}
     </div>
   );
 };
