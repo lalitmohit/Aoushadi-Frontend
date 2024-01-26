@@ -10,6 +10,7 @@ import {
   Home,
   SideBar,
   Offer,
+  Cart
 } from "./Import.jsx";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
                 <Route path="user" element={<User />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="offers" element={<Offer />} />
+                <Route path="cart" element={<Cart />} />
                 {/* Add a default route for unmatched paths */}
                 <Route path="*" element={<Home />} />
               </Routes>

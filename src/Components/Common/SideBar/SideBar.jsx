@@ -32,7 +32,7 @@ const SideBar = () => {
           Medicines
         </NavLink>
         <NavLink
-          to="/"
+          to="/cart"
           className={({ isActive }) =>
             ` ${isActive ? "Items-Active" : ""} Items-SideBars`
           }

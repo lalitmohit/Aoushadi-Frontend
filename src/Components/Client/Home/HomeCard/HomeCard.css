@@ -1,0 +1,37 @@
+.Display-Card{
+    background-color: #30ADBE;
+    border-radius: 15px ;
+    width: 230px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #033B4A;
+    margin-top: 80px;
+    flex-direction: column;
+}
+
+.Title-Card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.Title-Card h1{
+    font-size: 18px;    
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.Image-Card{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    font-size: 100px;
+    /* padding: 10px; */
+    color: #033B4A;
+    margin-bottom: 10px;
+}
