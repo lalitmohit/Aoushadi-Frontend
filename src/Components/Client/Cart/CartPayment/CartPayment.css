@@ -95,12 +95,12 @@
 }
 .adress-box{
     margin-top: 20px;
-
-}
-
-.adress-box button {
     background-color: #10847e;
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
-  }
+}
+
+/* .adress-box div {
+    
+  } */

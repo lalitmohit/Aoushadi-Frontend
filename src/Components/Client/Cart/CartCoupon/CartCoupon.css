@@ -52,7 +52,8 @@
   border: 2px solid #10847e;
   border-radius: 15px;
   color: white;
-  padding: 5px 15px;
+  font-size: 16px;
+  padding: 5px 20px;
   font-weight: 600;
   margin-right: 15px;
   transition: transform 0.3s ease-in-out;

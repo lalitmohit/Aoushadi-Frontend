@@ -4,6 +4,24 @@
 .sideb {
   width: 25%;
 }
+.nosideb{
+  width: 10%;
+}
 .content {
   width: 75%;
+}
+.nocontent{
+  width: 90%;
+}
+
+@media screen and (max-width: 760px) {
+  .nosideb{
+    /* width: 10%; */
+    display: none;
+  }
+  .nocontent {
+    width: 100%;
+  }
+  
+  
 }

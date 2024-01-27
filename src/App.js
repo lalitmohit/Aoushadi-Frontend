@@ -18,6 +18,19 @@ import {
 
 function App() {
   const [logined, setLogined] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
   }, []);
@@ -27,10 +40,10 @@ function App() {
       <div className="App flex">
         {logined ? (
           <>
-            <div className="sideb">
+            <div className={`${windowWidth >= 1300?"sideb":"nosideb"}`}>
               <SideBar />
             </div>
-            <div className="content ">
+            <div className={`${windowWidth >= 1300?"content":"nocontent"}`}>
               <TopBar username={`${logined ? "Kunal Singla" : "Sign In"}`} />
               <SearchBar />
               <Routes>

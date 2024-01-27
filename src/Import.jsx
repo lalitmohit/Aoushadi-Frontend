@@ -26,5 +26,4 @@ export {
   ProductPage,
   Payment_Gateway,
   Address,
-  Offer
 };
