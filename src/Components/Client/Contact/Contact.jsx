@@ -6,7 +6,6 @@ import { GrLocation } from "react-icons/gr";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const ContactInfo = ({ icon, text }) => (
@@ -45,7 +44,7 @@ const Contact = () => {
         <textarea placeholder="Write your message" />
         <div className="Submit-Feedback">
           <button type="submit">
-            <FaArrowUpFromBracket />
+            Submit
           </button>
         </div>
       </div>

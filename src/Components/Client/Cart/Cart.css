@@ -37,3 +37,23 @@
 .Payment-Cart{
     width: 30%;
 }
+
+@media screen and (max-width: 1300px) {
+
+    .Cart{
+        margin-left: 10%;
+    }
+    .Number-Cart{
+        width: 35%;
+    }
+    .Main-Content {
+        flex-wrap: wrap;
+    }
+    .Content-Container{
+        width: 100%;
+    }
+    .Payment-Cart{
+        width: 100%;
+    }
+    
+}
