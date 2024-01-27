@@ -35,7 +35,7 @@ const Cart = () => {
                   quant="500 ml"
                 />
               </div>
-              <div className="Coupon-Caart">
+              <div className="Coupon-Cart">
                 <CartCoupon />
               </div>
             </div>

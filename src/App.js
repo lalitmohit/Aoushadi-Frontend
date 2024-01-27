@@ -45,7 +45,6 @@ function App() {
             </div>
             <div className={`${windowWidth >= 1300?"content":"nocontent"}`}>
               <TopBar username={`${logined ? "Kunal Singla" : "Sign In"}`} />
-              <SearchBar />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="user" element={<User />} />

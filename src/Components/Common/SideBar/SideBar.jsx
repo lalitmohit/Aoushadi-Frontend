@@ -115,14 +115,7 @@ const SideBar = () => {
         >
           <FaCartShopping />
         </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            ` ${isActive ? "Items-Active" : ""} logo-SideBars`
-          }
-        >
-          <IoMdContacts />
-        </NavLink>
+        
         <NavLink
           to="/offers"
           className={({ isActive }) =>
@@ -130,6 +123,14 @@ const SideBar = () => {
           }
         >
           <TbDiscount2 />
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            ` ${isActive ? "Items-Active" : ""} logo-SideBars`
+          }
+        >
+          <IoMdContacts />
         </NavLink>
       </div>
 

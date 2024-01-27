@@ -9,7 +9,7 @@ const CartCoupon = () => {
         <h1>APPLY COUPON</h1>
       </NavLink>
       <div className="Apply-Card">
-        <input type="text" placeholder="Enter your Coupon Code" />
+        <input type="text" placeholder="Enter your Code" />
         <button>APPLY</button>
       </div>
     </div>

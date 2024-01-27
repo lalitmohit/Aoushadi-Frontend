@@ -17,6 +17,7 @@
 @media screen and (max-width: 760px) {
   .nosideb{
     /* width: 10%; */
+    width: 0%;
     display: none;
   }
   .nocontent {
