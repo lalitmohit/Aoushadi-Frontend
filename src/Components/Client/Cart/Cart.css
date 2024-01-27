@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 10px;
+
 }
 
 .Number-Cart{
@@ -57,3 +58,25 @@
     }
     
 }
+
+@media screen and (max-width: 900px) {
+
+    .Cart{
+        margin-left: 5%;
+    }
+    
+}
+
+
+@media screen and (max-width: 731px) {
+    
+
+    .Number-Cart{
+        width: 60%;
+    }
+    .Cart{
+        margin-left: 0;
+        padding-left: 10px;
+    }
+    
+  }

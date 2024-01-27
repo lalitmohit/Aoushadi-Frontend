@@ -36,3 +36,28 @@
     border-radius: 20px;
     height: 90%;
 }
+
+
+@media screen and (max-width: 760px) {
+    .nosideb{
+      /* width: 10%; */
+      display: none;
+    }
+    .nocontent {
+      width: 100%;
+    }
+    .Box-SearchBar {
+        padding-left: 0px;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+  }
+
+  @media screen and (max-width: 512px) {
+    .SearchBar{
+        width: 80%
+    }
+    
+  }

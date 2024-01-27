@@ -9,7 +9,9 @@
   margin-top: 10px;
   flex-direction: column;
   font-family: "Poppins";
-  padding: 10px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
 .Total-Cart {
@@ -99,7 +101,21 @@
     color: white;
     padding: 8px 20px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
+
+
+@media screen and (max-width: 1000px) {
+
+  .adress-box{
+    margin-top: 10px;
+  }
+
+  .Payment-Box{
+    margin-top: 20px;
+  }
+}
+
 
 /* .adress-box div {
     
