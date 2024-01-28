@@ -14,6 +14,7 @@ import {
   ProductPage,
   Payment_Gateway,
   Address,
+  Medicine
 } from "./Import.jsx";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             </div>
             <div className={`${windowWidth >= 1300?"content":"nocontent"}`}>
               <TopBar username={`${logined ? "Kunal Singla" : "Sign In"}`} />
+              <SearchBar/>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="user" element={<User />} />
@@ -54,6 +56,7 @@ function App() {
                 <Route path="productpage" element={<ProductPage />} />
                 <Route path="payment" element={<Payment_Gateway />} />
                 <Route path="address" element={<Address />} />
+                <Route path="medicine" element={<Medicine />} />
                 {/* Add a default route for unmatched paths */}
                 <Route path="*" element={<Home />} />
               </Routes>
