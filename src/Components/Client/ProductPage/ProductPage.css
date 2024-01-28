@@ -9,9 +9,9 @@
 
 .medicine_name {
   color: var(--main-bg-color);
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 600;
-  width: 80%;
+  width: 100%;
 }
 .top {
   border-bottom: 2px solid var(--main-bg-color);
@@ -44,7 +44,7 @@ button {
   padding: 10px 40px;
   border-radius: 10px;
   color: white;
-  font-size: larger;
+  font-size: large;
   font-weight: 700;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
