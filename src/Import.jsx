@@ -8,10 +8,12 @@ import Home from "./Components/Client/Home/Home";
 import Offer from "./Components/Client/Offer/Offer.jsx";
 import Adver from "./Components/Client/Advertisment/Adver.jsx";
 import Cart from "./Components/Client/Cart/Cart.jsx";
-
 import ProductPage from "./Components/Client/ProductPage/ProductPage";
 import Payment_Gateway from "./Components/Client/Payment_Gateway/Payment_Gateway";
 import Address from "./Components/Client/Address/Address";
+import Medicine from "./Components/Client/Medicines/Medicine.jsx";
+import CartCard from "./Components/Client/Cart/CartCard/CartCard.jsx";
+
 export {
   Login,
   TopBar,
@@ -25,5 +27,7 @@ export {
   Cart,
   ProductPage,
   Payment_Gateway,
+  Medicine,
   Address,
+  CartCard,
 };

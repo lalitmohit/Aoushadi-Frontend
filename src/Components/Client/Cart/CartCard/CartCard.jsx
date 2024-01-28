@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import "./CartCard.css";
 
-const CartCard = ({ img, price, name, desc, quant }) => {
+const CartCard = ({ img, price, name, desc, quant,isCart }) => {
   const [quantity, setQuantity] = useState(1);
-  const [isCart, setIsCart] = useState(false);
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);

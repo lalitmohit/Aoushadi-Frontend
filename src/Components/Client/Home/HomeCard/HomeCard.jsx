@@ -14,7 +14,7 @@ const HomeCard = ({title,whereToGo,img}) => {
             <h1>{title}</h1>
           </div>
           <div className="Image-Card">
-            {img}
+            <img src={img} alt="image" />
           </div>
         </div>
       </NavLink>
