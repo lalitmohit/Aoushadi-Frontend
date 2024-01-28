@@ -26,6 +26,7 @@ const Cart = () => {
                   name="Centaphil - The Best One"
                   desc="BY: AOUSHADHI PVT LIM."
                   quant="500 ml"
+                  isCart={true}
                 />
                 <CartCard
                   img={Product}
@@ -33,6 +34,7 @@ const Cart = () => {
                   name="Centaphil - The Best One"
                   desc="BY: AOUSHADHI PVT LIM."
                   quant="500 ml"
+                  isCart={true}
                 />
               </div>
               <div className="Coupon-Cart">

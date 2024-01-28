@@ -44,7 +44,7 @@ const SideBar = () => {
           Home
         </NavLink>
         <NavLink
-          to="/"
+          to="/medicine"
           className={({ isActive }) =>
             ` ${isActive ? "Items-Active" : ""} Items-SideBars`
           }

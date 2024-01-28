@@ -25,13 +25,9 @@
     color: white;
     font-weight: 600;
 }
-
 .Image-Card{
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    font-size: 100px;
-    /* padding: 10px; */
-    color: #033B4A;
-    margin-bottom: 10px;
+}
+.Image-Card img{
+    width: 100px;
 }
