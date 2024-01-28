@@ -1,18 +1,22 @@
-import Login from "./Components/Client/Login/Login";
-import TopBar from "./Components/Client/TopBar/TopBar";
-import SearchBar from "./Components/Client/SearchBar/SearchBar";
-import User from "./Components/Client/User/User";
-import Contact from "./Components/Client/Contact/Contact";
-import SideBar from "./Components/Common/SideBar/SideBar";
-import Home from "./Components/Client/Home/Home";
-import Offer from "./Components/Client/Offer/Offer.jsx";
-import Adver from "./Components/Client/Advertisment/Adver.jsx";
-import Cart from "./Components/Client/Cart/Cart.jsx";
-import ProductPage from "./Components/Client/ProductPage/ProductPage";
-import Payment_Gateway from "./Components/Client/Payment_Gateway/Payment_Gateway";
 import Address from "./Components/Client/Address/Address";
-import Medicine from "./Components/Client/Medicines/Medicine.jsx";
+import Adver from "./Components/Client/Advertisment/Adver.jsx";
 import CartCard from "./Components/Client/Cart/CartCard/CartCard.jsx";
+import CartCoupon from "./Components/Client/Cart/CartCoupon/CartCoupon.jsx";
+import CartPayment from "./Components/Client/Cart/CartPayment/CartPayment.jsx";
+import Cart from "./Components/Client/Cart/Cart.jsx";
+import Contact from "./Components/Client/Contact/Contact";
+import HomeCard from "./Components/Client/Home/HomeCard/HomeCard.jsx";
+import Home from "./Components/Client/Home/Home";
+import Login from "./Components/Client/Login/Login";
+import Medicine from "./Components/Client/Medicines/Medicine.jsx";
+import Offer from "./Components/Client/Offer/Offer.jsx";
+import OfferCard from "./Components/Client/Offer/OfferCard.jsx";
+import Payment_Gateway from "./Components/Client/Payment_Gateway/Payment_Gateway";
+import ProductPage from "./Components/Client/ProductPage/ProductPage";
+import SearchBar from "./Components/Client/SearchBar/SearchBar";
+import TopBar from "./Components/Client/TopBar/TopBar";
+import User from "./Components/Client/User/User";
+import SideBar from "./Components/Common/SideBar/SideBar";
 
 export {
   Login,
@@ -20,9 +24,13 @@ export {
   SearchBar,
   User,
   Contact,
+  CartCoupon,
+  CartPayment,
+  HomeCard,
   Home,
   SideBar,
   Offer,
+  OfferCard,
   Adver,
   Cart,
   ProductPage,
