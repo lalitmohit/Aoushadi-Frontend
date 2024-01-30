@@ -14,8 +14,9 @@ import {
   ProductPage,
   Payment_Gateway,
   Address,
-  Medicine
+  Medicine,
 } from "./Import.jsx";
+import Map from "./Components/Client/Address/MapApplied.js";
 
 function App() {
   const [logined, setLogined] = useState(true);
@@ -33,20 +34,19 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <Router>
       <div className="App flex">
         {logined ? (
           <>
-            <div className={`${windowWidth >= 1300?"sideb":"nosideb"}`}>
+            <div className={`${windowWidth >= 1300 ? "sideb" : "nosideb"}`}>
               <SideBar />
             </div>
-            <div className={`${windowWidth >= 1300?"content":"nocontent"}`}>
+            <div className={`${windowWidth >= 1300 ? "content" : "nocontent"}`}>
               <TopBar username={`${logined ? "Kunal Singla" : "Sign In"}`} />
-              <SearchBar/>
+              <SearchBar />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="user" element={<User />} />
@@ -58,6 +58,7 @@ function App() {
                 <Route path="address" element={<Address />} />
                 <Route path="medicine" element={<Medicine />} />
                 {/* Add a default route for unmatched paths */}
+                <Route path="map" element={<Map />} />
                 <Route path="*" element={<Home />} />
               </Routes>
             </div>
