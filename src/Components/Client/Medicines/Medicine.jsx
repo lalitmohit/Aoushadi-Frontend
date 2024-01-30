@@ -12,7 +12,8 @@ const Medicine = () => {
   }, [] );
 
   const getAllProducts = async (e) => {
-    const products = await axios.get('http://localhost:4000/product_data_get');
+    const products = await axios.get('http://localhost:4000/get_all_products');
+    // console.log(products.data)
     setProducts(products.data);
   }
   
@@ -24,6 +25,8 @@ const Medicine = () => {
       <div className="product-cards">
         {products.map((item, index) => (
           <CartCard key={index}
+            productId = {item.productId}
+            userId={item.userId}
             img={Product}
             price={item.price}
             name={item.item_name}
