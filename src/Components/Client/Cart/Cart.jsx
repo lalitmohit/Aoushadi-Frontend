@@ -17,15 +17,17 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getAllProducts()
-  }, [] );
+    getAllProducts();
+  }, []);
 
   const getAllProducts = async (e) => {
-    const products = await axios.get('http://localhost:4000/cart_data_get',{params:{userId:userId}})
-        // const data = response.data;
-        console.log(products.data)
-        setProducts(products.data);
-  }
+    const products = await axios.get("http://localhost:4000/cart_data_get", {
+      params: { userId: userId },
+    });
+    // const data = response.data;
+    console.log(products.data);
+    setProducts(products.data);
+  };
   return (
     <>
       {isCart && (
@@ -36,19 +38,19 @@ const Cart = () => {
           <div className="Main-Content">
             <div className="Content-Container">
               <div className="Items-Cart">
-
-              {products.map((item, index) => (
-                <CartCard key={index}
-                  cartId = {item.cart_id}
-                  userId={item.user_id}
-                  img={Product}
-                  price={item.total_price}
-                  name={"Centaphil - The Best One"}
-                  desc={"10"}
-                  quant={item.total_quantity}
-                  isCart={true}
-                />
-              ))}
+                {products.map((item, index) => (
+                  <CartCard
+                    key={index}
+                    cartId={item.cart_id}
+                    userId={item.user_id}
+                    img={Product}
+                    price={item.total_price}
+                    name={"Centaphil - The Best One"}
+                    desc={"10"}
+                    quant={item.total_quantity}
+                    isCart={true}
+                  />
+                ))}
               </div>
               <div className="Coupon-Cart">
                 <CartCoupon />

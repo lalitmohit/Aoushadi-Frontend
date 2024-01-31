@@ -3,10 +3,12 @@ import "./Address.css";
 import MapComponent from "./MapApplied";
 import { useState } from "react";
 export default function Address() {
+  console.log("nbdfk");
   const [locationused, setlocationused] = useState(false);
   const [latitude, setlatitude] = useState(0);
   const [longitude, setlongitude] = useState(0);
   function locate() {
+    console.log("adafsdf");
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error);
     } else {

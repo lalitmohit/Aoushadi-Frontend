@@ -17,6 +17,8 @@ import SearchBar from "./Components/Client/SearchBar/SearchBar";
 import TopBar from "./Components/Client/TopBar/TopBar";
 import User from "./Components/Client/User/User";
 import SideBar from "./Components/Common/SideBar/SideBar";
+import Update_Details from "./Components/Client/Update_Details/Update_Details.jsx";
+import Update_Password from "./Components/Client/UpdatePassword/UpdateP.jsx";
 
 export {
   Login,
@@ -38,4 +40,6 @@ export {
   Medicine,
   Address,
   CartCard,
+  Update_Details,
+  Update_Password,
 };

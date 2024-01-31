@@ -24,8 +24,8 @@ const SideBar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  return windowWidth >= 1300 ? (
-    <div className="SideBar sidebar bg-sidebar-color text-white h-screen  fixed top-0 left-0 p-4">
+  return windowWidth >= 1300 || windowWidth <= 761 ? (
+    <div className="SideBar sidebar bg-sidebar-color text-white md:h-screen  md:fixed md:top-0 left-0 p-4">
       <div className="Logo-SideBar">
         <Link to="/">
           <img src={Logo} alt="Logo" className="Image-SideBar" />
@@ -115,7 +115,7 @@ const SideBar = () => {
         >
           <FaCartShopping />
         </NavLink>
-        
+
         <NavLink
           to="/offers"
           className={({ isActive }) =>

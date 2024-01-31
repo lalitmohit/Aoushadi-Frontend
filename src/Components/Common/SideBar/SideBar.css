@@ -62,7 +62,7 @@
   cursor: pointer;
   color: white;
 }
-.Items-Active{
+.Items-Active {
   color: #9dabaf;
 }
 .Items-SideBars:hover {
@@ -70,7 +70,7 @@
   font-weight: 700;
 }
 
-.User-SideBar{
+.User-SideBar {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -98,22 +98,22 @@
   font-weight: 550;
 }
 
-.Logo-Sidebar{
+.Logo-Sidebar {
   width: 10%;
 }
 
-.img-small{
+.img-small {
   width: 100%;
   padding: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
 }
 
-.img-small:hover{
+.img-small:hover {
   transform: scale(1.1);
 }
 
-.detail-Logo{
+.detail-Logo {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -132,7 +132,7 @@
   font-weight: 700;
 }
 
-.logout-Logo{
+.logout-Logo {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -147,3 +147,12 @@
   margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 761px) {
+  .SideBar {
+    width: 100%;
+    position: fixed;
+  }
+  .Logo-Sidebar {
+    width: 100%;
+  }
+}
