@@ -1,15 +1,31 @@
 import React from "react";
 import CartCard from "./CartCard/CartCard";
+import { useState, useEffect } from "react";
 import CartCoupon from "./CartCoupon/CartCoupon";
 import CartPayment from "./CartPayment/CartPayment";
 import { useLocation } from "react-router-dom";
 import Product from "../../../Assets/Product.svg";
+import axios from "axios";
 
 import "./Cart.css";
+const userId = "1235";
+
 
 const Cart = () => {
   const location = useLocation();
   const isCart = location.pathname === "/cart";
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getAllProducts()
+  }, [] );
+
+  const getAllProducts = async (e) => {
+    const products = await axios.get('http://localhost:4000/cart_data_get',{params:{userId:userId}})
+        // const data = response.data;
+        console.log(products.data)
+        setProducts(products.data);
+  }
   return (
     <>
       {isCart && (
@@ -20,22 +36,19 @@ const Cart = () => {
           <div className="Main-Content">
             <div className="Content-Container">
               <div className="Items-Cart">
-                <CartCard
+              {products.map((item, index) => (
+                <CartCard key={index}
+                  cartId = {item.cart_id}
+                  userId={item.user_id}
                   img={Product}
-                  price="500"
-                  name="Centaphil - The Best One"
-                  desc="BY: AOUSHADHI PVT LIM."
-                  quant="500 ml"
+                  price={item.total_price}
+                  name={"Centaphil - The Best One"}
+                  desc={"10"}
+                  quant={item.total_quantity}
                   isCart={true}
                 />
-                <CartCard
-                  img={Product}
-                  price="500"
-                  name="Centaphil - The Best One"
-                  desc="BY: AOUSHADHI PVT LIM."
-                  quant="500 ml"
-                  isCart={true}
-                />
+              ))}
+                
               </div>
               <div className="Coupon-Cart">
                 <CartCoupon />
