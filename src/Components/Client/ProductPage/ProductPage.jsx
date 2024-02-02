@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import "./ProductPage.css";
 import sample_image from "../../../Assets/7be83f4d7db859884c987f0de107f497.png";
 import option_image1 from "../../../Assets/4e0103a2727c0a67da4ce99ca4fc8fdb.png";

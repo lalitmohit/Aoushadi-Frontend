@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import "./SearchBar.css";
-import {  useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
+  function search() {
+    navigate("medicine", { state: item });
+    console.log(item);
+  }
   const location = useLocation();
 
+  const [item, setitem] = useState("");
   const isUserActive = location.pathname === "/user";
   const isCartActive = location.pathname === "/cart";
 
@@ -14,9 +20,13 @@ const SearchBar = () => {
       {!(isUserActive || isCartActive) && (
         <div className="Box-SearchBar">
           <div className="SearchBar">
-            <input type="text" placeholder="Search Your Medicine" />
+            <input
+              type="text"
+              placeholder="Search Your Medicine"
+              onChange={(event) => setitem(event.target.value)}
+            />
             <div className="Search-Icon">
-              <IoSearchSharp />
+              <IoSearchSharp onClick={search} />
             </div>
           </div>
         </div>
