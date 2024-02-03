@@ -3,13 +3,18 @@
   --button-bg-hover: #10847e;
   --button-color-hover: white;
 }
+.user-box-container {
+  display: flex;
+  justify-content: center;
+}
 
 .User {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: "Poppins";
+  flex-direction: column;
 }
 
 .User-Box {
@@ -115,6 +120,49 @@ input {
   color: #033b4a;
   font-size: 18px;
   font-weight: bold;
+}
+.radio-inputs {
+  align-self: center;
+  position: sticky;
+  display: flex;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  width: 90%;
+  font-size: 14px;
+  flex-direction: row;
+  margin-bottom: 100px;
+}
+
+.radio-inputs .radio {
+  display: flex;
+  flex: 1 1 auto;
+  text-align: center;
+  margin: auto;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  transition: all 0.15s ease-in-out;
+}
+.radio-inputs .radio input:checked + .name {
+  font-weight: 900;
+  color: red;
+}
+.name:hover {
+  color: red;
+  font-weight: 900;
 }
 @media screen and (max-width: 1125px) {
   .User-Box {

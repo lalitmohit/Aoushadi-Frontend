@@ -48,14 +48,6 @@ const User = () => {
           >
             <button>Update Details</button>
           </NavLink>
-          <NavLink
-            to="uppassword"
-            state={{
-              userspassword: userpassword,
-            }}
-          >
-            <button>Update Password</button>{" "}
-          </NavLink>
         </div>
       </div>
     </div>

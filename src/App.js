@@ -16,7 +16,6 @@ import {
   Address,
   Medicine,
   Update_Details,
-  Update_Password,
 } from "./Import.jsx";
 import Map from "./Components/Client/Address/MapApplied.js";
 
@@ -63,7 +62,6 @@ function App() {
                 <Route path="map" element={<Map />} />
                 <Route path="*" element={<Home />} />
                 <Route path="user/updetails" element={<Update_Details />} />
-                <Route path="user/uppassword" element={<Update_Password />} />
               </Routes>
             </div>
           </>
