@@ -19,6 +19,7 @@ const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
     setQuantity(0);
   };
   // console.log(productId)
+  const userId = localStorage.getItem('userId')
   const send_product_info = async () => {
     // const data = {
     //   productId:productId
@@ -31,7 +32,7 @@ const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
       .then((response) => {
         const data = response.data;
         const responseData = {
-          user_id: data[0].userId,
+          user_id: userId,
           cart_id: "7848374",
           total_quantity: "4",
           total_price: data[0].price,
