@@ -8,7 +8,8 @@ import axios from "axios";
 
 import "./Cart.css";
 
-const userId = "1235";
+// const userId = "12140970";
+const userId= localStorage.getItem('userId');
 
 const Cart = () => {
   const location = useLocation();
