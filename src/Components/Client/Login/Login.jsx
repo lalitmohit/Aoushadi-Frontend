@@ -11,6 +11,7 @@ const Login = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const loginUser = async (data) => {
@@ -18,6 +19,11 @@ const Login = ({ onLoginSuccess }) => {
       const response = await axios.post("http://localhost:4000/login", data);
       return response.data;
     } catch (err) {
+      if (err.response && err.response.status === 404) {
+        setErrorMessage(err.response.data.message);
+      } else {
+        setErrorMessage('An error occurred while fetching data.');
+      }
       console.error('Login Error:', err);
     }
   }
@@ -36,9 +42,7 @@ const Login = ({ onLoginSuccess }) => {
         if (response.status) {
           console.log('login success');
           // Assume user has logged in and you want to store a variable named 'token'
-          
           localStorage.setItem('userId', userId);
-
           onLoginSuccess();
           return;
         }
@@ -91,6 +95,7 @@ const Login = ({ onLoginSuccess }) => {
               placeholder="User ID/ Mobile Number/ Email"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
+              required
             />
           )}
           {formState !== "signIn" && (
@@ -101,18 +106,21 @@ const Login = ({ onLoginSuccess }) => {
                 placeholder="User ID"
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
+                required
               />
               <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <input
                 type="number"
                 placeholder="Mobile Number"
                 value={mobileNumber}
                 onChange={(e) => setMobileNumber(e.target.value)}
+                required
               />
             </>
           )}
@@ -121,12 +129,13 @@ const Login = ({ onLoginSuccess }) => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <button type="submit" className="Dark">
             Submit
           </button>
         </form>
-
+           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <div className="Para-Login">
           <p onClick={() => setFormState(formState === "signIn" ? "signUp" : "signIn")}>
             {formState === "signIn" ? "Create New Account?" : "Already have an account?"}
