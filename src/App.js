@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(logined); 
+    console.log(logined);
   }, [logined]);
 
   const handleLoginSuccess = (e) => {
@@ -44,13 +44,18 @@ function App() {
     setLogined(true);
   };
 
+  const handleLogoutSuccess = (e) => {
+    console.log('Logout successful!'); // Add this line
+    setLogined(false);
+  }
+
   return (
     <Router>
       <div className="App flex">
         {logined ? (
           <>
             <div className={`${windowWidth >= 1300 ? "sideb" : "nosideb"}`}>
-              <SideBar />
+              <SideBar onLogoutSuccess={handleLogoutSuccess} />
             </div>
             <div className={`${windowWidth >= 1300 ? "content" : "nocontent"}`}>
               <TopBar username={`${logined ? "Kunal Singla" : "Sign In"}`} />

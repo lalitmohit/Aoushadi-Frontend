@@ -10,7 +10,7 @@ import { IoMdContacts } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({ onLogoutSuccess }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleResize = () => {
@@ -75,7 +75,7 @@ const SideBar = () => {
         >
           Contact Us
         </NavLink>
-        <span className="User-SideBar">Log Out</span>
+        <span className="User-SideBar" onClick={onLogoutSuccess}>Log Out</span>
       </div>
       <div className="Footer-SideBar">
         <p>
