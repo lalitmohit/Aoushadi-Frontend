@@ -3,7 +3,17 @@ import { MdDelete } from "react-icons/md";
 import "./CartCard.css";
 import axios from "axios";
 
-const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
+const CartCard = ({
+  img,
+  price,
+  name,
+  desc,
+  quant,
+  isCart,
+  productId,
+  func,
+}) => {
+  console.log(productId);
   const [quantity, setQuantity] = useState(1);
   const userId = localStorage.getItem("userId");
   const cartId = "7848374";
@@ -23,7 +33,6 @@ const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
   }, [quantity]);
 
   
-
   const send_product_info = async () => {
     // const data = {
     //   productId:productId
@@ -35,6 +44,7 @@ const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
       })
       .then((response) => {
         const data = response.data;
+        console.log(data, "fetched data");
         const responseData = {
           user_id: userId,
           cart_id: cartId,
@@ -51,7 +61,13 @@ const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
     // const data = {"userId":response.data.}
     // await axios.post('http://localhost:4000/cart_data_post',response.data);
   };
+  func(quantity * price);
 
+  // console.log(quantity);
+  // useState(() => {
+  //   func(quantity);
+  //   console.log(quantity, "gbjknjnuinkjnnjiunjknui");
+  // }, [quantity]);
   return (
     <>
       {quantity > 0 && (
