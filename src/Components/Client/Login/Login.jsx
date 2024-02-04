@@ -35,6 +35,10 @@ const Login = ({ onLoginSuccess }) => {
         const response = await loginUser(data);
         if (response.status) {
           console.log('login success');
+          // Assume user has logged in and you want to store a variable named 'token'
+          
+          localStorage.setItem('userId', userId);
+
           onLoginSuccess();
           return;
         }
@@ -56,6 +60,7 @@ const Login = ({ onLoginSuccess }) => {
           const response = await loginUser(data);
           if (response.status) {
             console.log('login success');
+            localStorage.setItem('userId', userId);
             onLoginSuccess();
             return;
           }
