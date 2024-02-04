@@ -12,9 +12,11 @@ const Medicine = () => {
   if (item) {
     i = item;
   }
+  function func() {
+    console.log("df");
+  }
   const [products, setProducts] = useState([]);
   const [result, setresult] = useState([]);
-  console.log(item, "item");
   useEffect(() => {
     console.log("useEffect");
     const getAllProducts = async (e) => {
@@ -24,14 +26,12 @@ const Medicine = () => {
       // console.log(products.data)
       setProducts(products.data);
       if (i === "") {
-        console.log("nayamurga");
         setresult(products.data);
       }
     };
 
     getAllProducts();
     const search_parameters = Object.keys(Object.assign({}, ...products));
-    console.log(search_parameters, "param");
     function search(data) {
       if (item) {
         return data.filter((data) =>
@@ -42,9 +42,7 @@ const Medicine = () => {
       }
     }
     if (item) {
-      console.log("itemh");
       let a = search(products);
-      console.log(a, "filered");
       setresult(a);
     }
   }, [item]);
@@ -66,6 +64,7 @@ const Medicine = () => {
             desc={item.discount}
             quant={10}
             isCart={false}
+            func={func}
           />
         ))}
       </div>
