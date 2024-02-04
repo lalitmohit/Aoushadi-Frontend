@@ -8,33 +8,55 @@ import axios from "axios";
 
 import "./Cart.css";
 
+
 // const userId = "12140970";
 const userId= localStorage.getItem('userId');
 
+
 const Cart = () => {
+  const sumArray = (arr) =>
+    arr.reduce(
+      (sum, current) => (Number.isInteger(current) ? sum + current : sum),
+      0
+    );
+  var quantity = [];
+
+  const [quant, setquant] = useState(0);
+  const getquantity = (quant) => {
+    quantity.push(quant);
+    setquant(sumArray(quantity) / 2);
+  };
+  const [delivery, setdelivery] = useState(100);
+  const [coupon, setcoupon] = useState(0);
   const location = useLocation();
   const isCart = location.pathname === "/cart";
-
+  function changecoupon(value) {
+    setcoupon(value);
+  }
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getAllProducts();
   }, []);
 
-  const getAllProducts = async (e) => {
+  async function getAllProducts(e) {
     const products = await axios.get("http://localhost:4000/cart_data_get", {
       params: { userId: userId },
     });
     // const data = response.data;
     console.log(products.data);
     setProducts(products.data);
-  };
+  }
+  console.log(quant, coupon, delivery);
+  useState(() => {
+    console.log(quant, coupon, delivery);
+  }, [coupon]);
   return (
     <>
       {isCart && (
         <div className="Cart">
           <div className="Number-Cart">
-            <h1>Total 3 items in your Cart</h1>
+            <h1>Total {products.length} items in your Cart</h1>
           </div>
           <div className="Main-Content">
             <div className="Content-Container">
@@ -50,15 +72,16 @@ const Cart = () => {
                     desc={"10"}
                     quant={item.total_quantity}
                     isCart={true}
+                    func={getquantity}
                   />
                 ))}
               </div>
               <div className="Coupon-Cart">
-                <CartCoupon />
+                <CartCoupon price={quant} changecoupon={changecoupon} />
               </div>
             </div>
             <div className="Payment-Cart">
-              <CartPayment />
+              <CartPayment price={quant} coupon={coupon} delivery={delivery} />
             </div>
           </div>
         </div>
