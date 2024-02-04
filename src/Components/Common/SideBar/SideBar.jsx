@@ -100,7 +100,7 @@ const SideBar = () => {
           <IoHome />
         </NavLink>
         <NavLink
-          to="/"
+          to="/medicine"
           className={({ isActive }) =>
             ` ${isActive ? "Items-Active" : ""} logo-SideBars`
           }

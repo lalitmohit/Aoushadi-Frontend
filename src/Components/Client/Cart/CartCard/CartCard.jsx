@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import "./CartCard.css";
 import axios from "axios";
 
 const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
   const [quantity, setQuantity] = useState(1);
-  // const [productId,setproductId]= useState(productId)
+  const userId = localStorage.getItem("userId");
+  const cartId = "7848374";
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
+  const increaseQuantity = () => setQuantity(quantity + 1);
 
-  const decreaseQuantity = () => {
-    setQuantity(Math.max(0, quantity - 1));
-  };
+  const decreaseQuantity = () => setQuantity(Math.max(0, quantity - 1));
 
-  const deleteCard = () => {
-    setQuantity(0);
-  };
-  // console.log(productId)
-  const userId = localStorage.getItem('userId')
+  const deleteCard = () => setQuantity(0);
+
+  useEffect(() => {
+    if (quantity === 0) {
+      axios.delete("http://localhost:4000/cart_data_del", {
+        params: { cart_id: cartId, user_id: userId },
+      }).then((response) => console.log(response.data));
+    }
+  }, [quantity]);
+
+  
+
   const send_product_info = async () => {
     // const data = {
     //   productId:productId
@@ -33,7 +37,7 @@ const CartCard = ({ img, price, name, desc, quant, isCart, productId }) => {
         const data = response.data;
         const responseData = {
           user_id: userId,
-          cart_id: "7848374",
+          cart_id: cartId,
           total_quantity: "4",
           total_price: data[0].price,
         };
