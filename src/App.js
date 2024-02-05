@@ -40,14 +40,14 @@ function App() {
   }, [logined]);
 
   const handleLoginSuccess = (e) => {
-    console.log('Login successful!'); // Add this line
+    console.log("Login successful!"); // Add this line
     setLogined(true);
   };
 
   const handleLogoutSuccess = (e) => {
-    console.log('Logout successful!'); // Add this line
+    console.log("Logout successful!"); // Add this line
     setLogined(false);
-  }
+  };
 
   return (
     <Router>
@@ -79,11 +79,17 @@ function App() {
           </>
         ) : (
           <Routes>
-            <Route path="login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+            <Route
+              path="login"
+              element={<Login onLoginSuccess={handleLoginSuccess} />}
+            />
             <Route path="home" element={<User />} />
 
             {/* Add a default route for unmatched paths */}
-            <Route path="*" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+            <Route
+              path="*"
+              element={<Login onLoginSuccess={handleLoginSuccess} />}
+            />
           </Routes>
         )}
       </div>

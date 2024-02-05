@@ -12,7 +12,7 @@ const Medicine = () => {
   if (item) {
     i = item;
   }
-  function func() {
+  function func(quant, index) {
     console.log("df");
   }
   const [products, setProducts] = useState([]);
@@ -55,6 +55,7 @@ const Medicine = () => {
       <div className="product-cards">
         {result.map((item, index) => (
           <CartCard
+            index={index}
             key={index}
             productId={item.productId}
             userId={item.userId}

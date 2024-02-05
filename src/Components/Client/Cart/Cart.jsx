@@ -8,10 +8,8 @@ import axios from "axios";
 
 import "./Cart.css";
 
-
 // const userId = "12140970";
-const userId= localStorage.getItem('userId');
-
+const userId = localStorage.getItem("userId");
 
 const Cart = () => {
   const sumArray = (arr) =>
@@ -20,12 +18,14 @@ const Cart = () => {
       0
     );
   var quantity = [];
-
   const [quant, setquant] = useState(0);
-  const getquantity = (quant) => {
-    quantity.push(quant);
-    setquant(sumArray(quantity) / 2);
+  const getquantity = (quant, index) => {
+    quantity[index] = quant;
+    quantity = quantity.filter((el) => el != 0);
+    console.log(quantity);
+    setquant(sumArray(quantity));
   };
+  console.log(quantity);
   const [delivery, setdelivery] = useState(100);
   const [coupon, setcoupon] = useState(0);
   const location = useLocation();
@@ -47,10 +47,6 @@ const Cart = () => {
     console.log(products.data);
     setProducts(products.data);
   }
-  console.log(quant, coupon, delivery);
-  useState(() => {
-    console.log(quant, coupon, delivery);
-  }, [coupon]);
   return (
     <>
       {isCart && (
@@ -73,6 +69,7 @@ const Cart = () => {
                     quant={item.total_quantity}
                     isCart={true}
                     func={getquantity}
+                    index={index}
                   />
                 ))}
               </div>

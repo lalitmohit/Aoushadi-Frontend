@@ -4,6 +4,7 @@ import "./CartCard.css";
 import axios from "axios";
 
 const CartCard = ({
+  index,
   img,
   price,
   name,
@@ -13,7 +14,6 @@ const CartCard = ({
   productId,
   func,
 }) => {
-  console.log(productId);
   const [quantity, setQuantity] = useState(1);
   const userId = localStorage.getItem("userId");
   const cartId = "7848374";
@@ -26,13 +26,14 @@ const CartCard = ({
 
   useEffect(() => {
     if (quantity === 0) {
-      axios.delete("http://localhost:4000/cart_data_del", {
-        params: { cart_id: cartId, user_id: userId },
-      }).then((response) => console.log(response.data));
+      axios
+        .delete("http://localhost:4000/cart_data_del", {
+          params: { cart_id: cartId, user_id: userId },
+        })
+        .then((response) => console.log(response.data));
     }
   }, [quantity]);
 
-  
   const send_product_info = async () => {
     // const data = {
     //   productId:productId
@@ -44,7 +45,6 @@ const CartCard = ({
       })
       .then((response) => {
         const data = response.data;
-        console.log(data, "fetched data");
         const responseData = {
           user_id: userId,
           cart_id: cartId,
@@ -52,8 +52,6 @@ const CartCard = ({
           total_price: data[0].price,
         };
         // console.log(productId)
-        console.log(responseData);
-        console.log(data);
         // return ""
         axios.post("http://localhost:4000/cart_data_post", responseData);
         return "";
@@ -61,7 +59,7 @@ const CartCard = ({
     // const data = {"userId":response.data.}
     // await axios.post('http://localhost:4000/cart_data_post',response.data);
   };
-  func(quantity * price);
+  func(quantity * price, index);
 
   // console.log(quantity);
   // useState(() => {

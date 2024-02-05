@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from "react";
 import Logo from "../../../Assets/Logo.svg";
 import "./Login.css";
-import axios from 'axios';
-import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ onLoginSuccess }) => {
   const [formState, setFormState] = useState("signIn");
@@ -23,12 +22,11 @@ const Login = ({ onLoginSuccess }) => {
       if (err.response && err.response.status === 404) {
         setErrorMessage(err.response.data.message);
       } else {
-        setErrorMessage('An error occurred while fetching data.');
+        setErrorMessage("An error occurred while fetching data.");
       }
-      console.error('Login Error:', err);
+      console.error("Login Error:", err);
     }
-  }
-
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,13 +36,13 @@ const Login = ({ onLoginSuccess }) => {
       if (formState === "signIn") {
         data = {
           userId: userId,
-          password: password
+          password: password,
         };
         const response = await loginUser(data);
         if (response.status) {
-          console.log('login success');
+          console.log("login success");
           // Assume user has logged in and you want to store a variable named 'token'
-          localStorage.setItem('userId', userId);
+          localStorage.setItem("userId", userId);
           onLoginSuccess();
           return;
         }
@@ -53,7 +51,7 @@ const Login = ({ onLoginSuccess }) => {
           userId: userId,
           email: email,
           mobile: mobileNumber,
-          password: password
+          password: password,
         };
         response = await axios.post("http://localhost:4000/register", data);
         console.log(response);
@@ -61,21 +59,18 @@ const Login = ({ onLoginSuccess }) => {
         if (response.data.status) {
           data = {
             userId: userId,
-            password: password
+            password: password,
           };
           const response = await loginUser(data);
           if (response.status) {
-            console.log('login success');
-            localStorage.setItem('userId', userId);
+            console.log("login success");
+            localStorage.setItem("userId", userId);
             onLoginSuccess();
             return;
           }
         }
       }
-
-    } catch (err) {
-
-    }
+    } catch (err) {}
     // Add your form submission logic here
     // You can access form values using userId, email, mobileNumber, and password states
   };
@@ -104,7 +99,8 @@ const Login = ({ onLoginSuccess }) => {
             <>
               <input
                 type="number"
-                Expand Down
+                Expand
+                Down
                 placeholder="User ID"
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
@@ -136,16 +132,19 @@ const Login = ({ onLoginSuccess }) => {
           <button type="submit" className="Dark">
             Submit
           </button>
-
         </form>
-           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <div className="Para-Login">
-          <p onClick={() => setFormState(formState === "signIn" ? "signUp" : "signIn")}>
-            {formState === "signIn" ? "Create New Account?" : "Already have an account?"}
+          <p
+            onClick={() =>
+              setFormState(formState === "signIn" ? "signUp" : "signIn")
+            }
+          >
+            {formState === "signIn"
+              ? "Create New Account?"
+              : "Already have an account?"}
           </p>
-          {formState === "signIn" && (
-            <p>Forgot Password?</p>
-          )}
+          {formState === "signIn" && <p>Forgot Password?</p>}
         </div>
         <hr />
         <div className="Authentication-Login">
@@ -157,4 +156,3 @@ const Login = ({ onLoginSuccess }) => {
 };
 
 export default Login;
-
