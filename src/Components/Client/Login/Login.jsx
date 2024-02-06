@@ -10,7 +10,7 @@ const Login = ({ onLoginSuccess }) => {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
+  const [mobile, setMobileNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
@@ -21,8 +21,6 @@ const Login = ({ onLoginSuccess }) => {
     } catch (err) {
       if (err.response && err.response.status === 404) {
         setErrorMessage(err.response.data.message);
-      } else {
-        setErrorMessage("An error occurred while fetching data.");
       }
       console.error("Login Error:", err);
     }
@@ -50,7 +48,7 @@ const Login = ({ onLoginSuccess }) => {
         data = {
           userId: userId,
           email: email,
-          mobile: mobileNumber,
+          mobile: mobile,
           password: password,
         };
         response = await axios.post("http://localhost:4000/register", data);
@@ -116,7 +114,7 @@ const Login = ({ onLoginSuccess }) => {
               <input
                 type="number"
                 placeholder="Mobile Number"
-                value={mobileNumber}
+                value={mobile}
                 onChange={(e) => setMobileNumber(e.target.value)}
                 required
               />
@@ -133,7 +131,7 @@ const Login = ({ onLoginSuccess }) => {
             Submit
           </button>
         </form>
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+        {errorMessage && formState === "signIn" && <p style={{ color: "red" }}>{errorMessage}</p>}
         <div className="Para-Login">
           <p
             onClick={() =>
