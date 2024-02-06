@@ -12,6 +12,16 @@ import "./Cart.css";
 const userId = localStorage.getItem("userId");
 
 const Cart = () => {
+  const [item_number, setitem_number] = useState(0);
+  function count(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+        count++;
+      }
+    }
+    return count;
+  }
   const sumArray = (arr) =>
     arr.reduce(
       (sum, current) => (Number.isInteger(current) ? sum + current : sum),
@@ -21,8 +31,9 @@ const Cart = () => {
   const [quant, setquant] = useState(0);
   const getquantity = (quant, index) => {
     quantity[index] = quant;
-    quantity = quantity.filter((el) => el != 0);
-    console.log(quantity);
+    console.log(quantity, index);
+    console.log(count(quantity), "jsdfkjshjkfhsdjkf", quantity);
+    setitem_number(count(quantity));
     setquant(sumArray(quantity));
   };
   console.log(quantity);
@@ -52,7 +63,7 @@ const Cart = () => {
       {isCart && (
         <div className="Cart">
           <div className="Number-Cart">
-            <h1>Total {products.length} items in your Cart</h1>
+            <h1>Total {item_number} items in your Cart</h1>
           </div>
           <div className="Main-Content">
             <div className="Content-Container">

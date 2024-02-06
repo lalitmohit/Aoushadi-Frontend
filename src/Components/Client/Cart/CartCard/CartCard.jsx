@@ -14,6 +14,7 @@ const CartCard = ({
   productId,
   func,
 }) => {
+  const [added, seadded] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const userId = localStorage.getItem("userId");
   const cartId = "7848374";
