@@ -49,8 +49,18 @@ export default function Update_Details() {
     }
     // const data = response.data;
     // console.log(response.data);
-
   }
+
+  const delete_account = async (req,res)=>{
+    const response = await axios.delete("http://localhost:4000/user_account_del",{
+      data:{userId:userId}
+    });
+
+    console.log(response)
+    window.location.href = '/login';
+    localStorage.clear();
+  }
+
   return (
     <>
       <div className="User">
@@ -178,7 +188,7 @@ export default function Update_Details() {
             )}
             {settings && (
               <div className="Button-Users">
-                <button>Log Out</button>
+                <button onClick={delete_account}>Delete Account</button>
               </div>
             )}
           </div>
