@@ -18,7 +18,7 @@ import TopBar from "./Components/Client/TopBar/TopBar";
 import User from "./Components/Client/User/User";
 import SideBar from "./Components/Common/SideBar/SideBar";
 import Update_Details from "./Components/Client/Update_Details/Update_Details.jsx";
-
+import OrderList from "./Components/Client/Order_List/Order_List.jsx";
 export {
   Login,
   TopBar,
@@ -40,4 +40,5 @@ export {
   Address,
   CartCard,
   Update_Details,
+  OrderList,
 };

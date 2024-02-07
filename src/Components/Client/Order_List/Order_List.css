@@ -1,0 +1,62 @@
+:root {
+  --main-bg-color: #033b4a;
+  --accent-color: #2da95c;
+  --light-bg-color: #646060;
+  --button-hover-color: #10847e;
+  --text-color: #646060;
+  --border-color: white;
+}
+
+.items {
+  width: fit-content;
+  cursor: pointer;
+  color: #10847e;
+  font-size: x-large;
+  font-weight: 600;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.price {
+  width: fit-content;
+  color: #10847e;
+  font-size: x-large;
+  font-weight: 600;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.date_time {
+  height: max-content;
+  color: #2da95c;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.items:hover {
+  text-decoration: underline;
+}
+.heading {
+  font-size: xx-large;
+  color: white;
+  background-color: #2da95c;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 80px;
+  width: fit-content;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+.medicine_details {
+  height: max-content;
+  color: #2da95c;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 3px;
+}

@@ -48,6 +48,9 @@ const User = () => {
           >
             <button>Update Details</button>
           </NavLink>
+          <NavLink to="order">
+            <button>My Orders</button>
+          </NavLink>
         </div>
       </div>
     </div>

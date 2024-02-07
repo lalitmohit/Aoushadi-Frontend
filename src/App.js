@@ -16,11 +16,12 @@ import {
   Address,
   Medicine,
   Update_Details,
+  OrderList,
 } from "./Import.jsx";
 import Map from "./Components/Client/Address/MapApplied.js";
 
 function App() {
-  const [logined, setLogined] = useState(false);
+  const [logined, setLogined] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleResize = () => {
@@ -70,6 +71,7 @@ function App() {
                 <Route path="payment" element={<Payment_Gateway />} />
                 <Route path="address" element={<Address />} />
                 <Route path="medicine" element={<Medicine />} />
+                <Route path="user/order" element={<OrderList />} />
                 {/* Add a default route for unmatched paths */}
                 <Route path="map" element={<Map />} />
                 <Route path="*" element={<Home />} />
