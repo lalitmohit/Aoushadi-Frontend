@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Address.css";
 import MapComponent from "./MapApplied";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Address() {
-  console.log("nbdfk");
+  const location = useLocation();
+  const item = location.state;
+  const navigate = useNavigate();
+  console.log(item);
+  const [address_saved, set_address_saved] = useState(false);
+  const [address, setaddress] = useState([]);
   const [locationused, setlocationused] = useState(false);
   const [latitude, setlatitude] = useState(0);
   const [longitude, setlongitude] = useState(0);
+  const [HouseNo, setHouseNo] = useState("IIT Bhilai");
+  const [Road, setRoad] = useState("Hostel Kanhar");
+  const [Directions, setDirections] = useState("");
   function locate() {
     console.log("adafsdf");
     if (navigator.geolocation) {
@@ -20,7 +31,6 @@ export default function Address() {
       const longitude = position.coords.longitude;
       setlatitude(latitude);
       setlongitude(longitude);
-      alert(`Latitude: ${latitude}, Longitude: ${longitude}`);
       setlocationused(true);
     }
 
@@ -28,6 +38,9 @@ export default function Address() {
       console.log("Unable to retrieve your location");
     }
   }
+  useEffect(() => {
+    setaddress({ HouseNo, Road, Directions });
+  }, [HouseNo, Road, Directions]);
   return (
     <div className="cover">
       <div className="note">
@@ -55,11 +68,19 @@ export default function Address() {
           <div className="flex-col bg-white min-h-96 rounded-xl py-5 px-10 mt-5 flex justify-between">
             <div className="block">
               <label> House/ Flat? Block No</label> <br />
-              <input className="text" placeholder="E.g. IIT Bhilai"></input>
+              <input
+                className="text"
+                placeholder="E.g. IIT Bhilai"
+                defaultValue={HouseNo}
+              ></input>
             </div>
             <div className="block">
               <label>Apartment/ Road/ Area</label> <br />
-              <input className="text" placeholder="E.g. Hostel Kanhar"></input>
+              <input
+                className="text"
+                placeholder="E.g. Hostel Kanhar"
+                defaultValue={Road}
+              ></input>
             </div>
 
             <div className="block">
@@ -67,14 +88,20 @@ export default function Address() {
               <input
                 className="text"
                 placeholder="E.g. Give it to the guard"
+                defaultValue={Directions}
               ></input>
             </div>
           </div>
         </div>
       )}
       <div className="button-below">
-        <button>Back</button>
-        <button>Proceed</button>
+        {!address_saved && (
+          <button onClick={() => set_address_saved(true)}>Save as Home</button>
+        )}
+        <NavLink to="/payment" state={{ item, address }}>
+          <button>Proceed</button>
+        </NavLink>
+        <button onClick={() => navigate(-1)}>Back</button>
       </div>
     </div>
   );

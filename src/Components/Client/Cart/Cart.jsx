@@ -44,7 +44,7 @@ const Cart = () => {
   function changecoupon(value) {
     setcoupon(value);
   }
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(["sdfsd"]);
 
   useEffect(() => {
     getAllProducts();

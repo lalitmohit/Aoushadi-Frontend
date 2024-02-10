@@ -38,7 +38,7 @@ const CartPayment = ({ price, coupon, delivery }) => {
       </div>
       {
         <div className="adress-box">
-          <NavLink to="/address">
+          <NavLink to="/address" state={{ price, coupon, charge }}>
             {/* <div>Add Delivery Address</div> */}
             Add Deliver Address
           </NavLink>
