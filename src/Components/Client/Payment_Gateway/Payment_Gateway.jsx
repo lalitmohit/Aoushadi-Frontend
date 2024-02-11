@@ -25,7 +25,6 @@ export default function Payment_Gateway() {
       const response = await axios.post(`${baseurl}/pay`, data);
       console.log(response);
       if (response.status === 200 && response.data.success) {
-        window.location.href = "/";
         window.location.href = response.data.data.instrumentResponse.redirectInfo.url;
         // navigate(response.data.data.instrumentResponse.redirectInfo.url)
         //window.open(response.data.data.instrumentResponse.redirectInfo.url);
