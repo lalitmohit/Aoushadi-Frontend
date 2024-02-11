@@ -49,8 +49,11 @@ const CartCard = ({
         const responseData = {
           user_id: userId,
           cart_id: cartId,
-          total_quantity: "4",
+          product_id: productId,
+          total_quantity: quantity,
+          price: data[0].price,
           total_price: data[0].price,
+          total_discount: 0
         };
         // console.log(productId)
         // return ""
