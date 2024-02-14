@@ -61,7 +61,7 @@ const Medicine = () => {
             userId={item.userId}
             img={Product}
             price={item.price}
-            name={item.item_name}
+            product_name={item.product_name}
             desc={item.discount}
             quant={10}
             isCart={false}

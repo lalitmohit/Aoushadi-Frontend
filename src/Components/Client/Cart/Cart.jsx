@@ -71,11 +71,10 @@ const Cart = () => {
                 {products.map((item, index) => (
                   <CartCard
                     key={index}
-                    cartId={item.cart_id}
                     userId={item.user_id}
                     img={Product}
                     price={item.total_price}
-                    name={"Centaphil - The Best One"}
+                    product_name={item.product_name}
                     desc={"10"}
                     quant={item.total_quantity}
                     isCart={true}

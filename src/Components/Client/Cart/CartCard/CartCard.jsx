@@ -7,7 +7,7 @@ const CartCard = ({
   index,
   img,
   price,
-  name,
+  product_name,
   desc,
   quant,
   isCart,
@@ -17,7 +17,7 @@ const CartCard = ({
   const [added, seadded] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const userId = localStorage.getItem("userId");
-  const cartId = "7848374";
+  // const cartId = "7848374";
 
   const increaseQuantity = () => setQuantity(quantity + 1);
 
@@ -29,7 +29,7 @@ const CartCard = ({
     if (quantity === 0) {
       axios
         .delete("http://localhost:4000/cart_data_del", {
-          params: { cart_id: cartId, user_id: userId },
+          params: {  user_id: userId },
         })
         .then((response) => console.log(response.data));
     }
@@ -48,11 +48,11 @@ const CartCard = ({
         const data = response.data;
         const responseData = {
           user_id: userId,
-          cart_id: cartId,
           product_id: productId,
           total_quantity: quantity,
           price: data[0].price,
           total_price: data[0].price,
+          product_name: data[0].product_name,
           total_discount: 0
         };
         // console.log(productId)
@@ -79,7 +79,7 @@ const CartCard = ({
           </div>
           <div className="content-Card">
             <div className="top-ka-Card">
-              <h1>{name}</h1>
+              <h1>{product_name}</h1>
               {isCart && (
                 <div className="button" onClick={deleteCard}>
                   <MdDelete />
