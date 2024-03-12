@@ -21,7 +21,7 @@ import {
 import Map from "./Components/Client/Address/MapApplied.js";
 
 function App() {
-  const [logined, setLogined] = useState(false);
+  const [logined, setLogined] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleResize = () => {
