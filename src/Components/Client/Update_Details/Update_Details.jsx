@@ -32,7 +32,7 @@ export default function Update_Details() {
   // }
   const userId = localStorage.getItem('userId')
   const user_update = async(req,res)=>{
-    const response = await axios.put("http://localhost:4000/user_update", {
+    const response = await axios.put("https://aoushadhi.vercel.app/user_update", {
         userId:userId,mobile:userphone,email:useremail
     });
     // const data = response.data;
@@ -42,7 +42,7 @@ export default function Update_Details() {
 
   const password_update = async(req,res)=>{
     if (userpassword=== confirm_password){
-      const response = await axios.put("http://localhost:4000/password_update", {
+      const response = await axios.put("https://aoushadhi.vercel.app/password_update", {
       userId:userId,new_password:userpassword
     });
     console.log(response.data)
@@ -52,7 +52,7 @@ export default function Update_Details() {
   }
 
   const delete_account = async (req,res)=>{
-    const response = await axios.delete("http://localhost:4000/user_account_del",{
+    const response = await axios.delete("https://aoushadhi.vercel.app/user_account_del",{
       data:{userId:userId}
     });
 

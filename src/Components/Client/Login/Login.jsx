@@ -16,7 +16,7 @@ const Login = ({ onLoginSuccess }) => {
 
   const loginUser = async (data) => {
     try {
-      const response = await axios.post("http://localhost:4000/login", data);
+      const response = await axios.post("https://aoushadhi.vercel.app/login", data);
       return response.data;
     } catch (err) {
       if (err.response && err.response.status === 404) {
@@ -51,7 +51,7 @@ const Login = ({ onLoginSuccess }) => {
           mobile: mobile,
           password: password,
         };
-        response = await axios.post("http://localhost:4000/register", data);
+        response = await axios.post("https://aoushadhi.vercel.app/register", data);
         console.log(response);
         console.log(response.statusText, response.data.status);
         if (response.data.status) {

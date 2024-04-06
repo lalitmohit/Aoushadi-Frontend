@@ -21,7 +21,7 @@ const Medicine = () => {
     console.log("useEffect");
     const getAllProducts = async (e) => {
       const products = await axios.get(
-        "http://localhost:4000/get_all_products"
+        "https://aoushadhi.vercel.app/get_all_products"
       );
       // console.log(products.data)
       setProducts(products.data);

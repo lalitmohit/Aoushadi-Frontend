@@ -28,7 +28,7 @@ const CartCard = ({
   useEffect(() => {
     if (quantity === 0) {
       axios
-        .delete("http://localhost:4000/cart_data_del", {
+        .delete("https://aoushadhi.vercel.app/cart_data_del", {
           params: {  user_id: userId },
         })
         .then((response) => console.log(response.data));
@@ -41,7 +41,7 @@ const CartCard = ({
     // }
 
     axios
-      .get("http://localhost:4000/product_data_get", {
+      .get("https://aoushadhi.vercel.app/product_data_get", {
         params: { productId: productId },
       })
       .then((response) => {
@@ -57,7 +57,7 @@ const CartCard = ({
         };
         // console.log(productId)
         // return ""
-        axios.post("http://localhost:4000/cart_data_post", responseData);
+        axios.post("https://aoushadhi.vercel.app/cart_data_post", responseData);
         return "";
       });
     // const data = {"userId":response.data.}

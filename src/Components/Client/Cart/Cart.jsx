@@ -51,7 +51,7 @@ const Cart = () => {
   }, []);
 
   async function getAllProducts(e) {
-    const products = await axios.get("http://localhost:4000/cart_data_get", {
+    const products = await axios.get("https://aoushadhi.vercel.app/cart_data_get", {
       params: { userId: userId },
     });
     // const data = response.data;
